@@ -1,0 +1,16 @@
+# Optional independent checkouts and reproducible output.
+/repos/
+/cache/
+
+# Local editor state.
+/.idea/
+/.vscode/*.local.json
+.DS_Store
+Thumbs.db
+
+# Local secrets and personal overrides; review staged content before sharing.
+.env
+.env.*
+!.env.example
+*.local.md
+/.claude/settings.local.json

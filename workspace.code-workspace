@@ -1,0 +1,8 @@
+{
+  "folders": [
+    { "name": "Workspace", "path": "." },
+    { "name": "Files", "path": "examples/files" },
+    { "name": "Magic", "path": "examples/magic" },
+    { "name": "Automation", "path": "examples/automation" },
+  ],
+}
