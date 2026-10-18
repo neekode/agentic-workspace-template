@@ -18,8 +18,9 @@ costs. Add another only for a useful review, comparison or missing capability.
 These are Windows PowerShell installation routes. The official guides cover
 account requirements and other platforms.
 
-For npm routes, install [Node.js LTS](https://nodejs.org/en/download) if needed and
-reopen your terminal. Check `node --version` and `npm.cmd --version` first.
+**Before an npm install command:** follow the
+[Node.js and npm setup](../QUICK-SETUP.md#install-nodejs-and-npm-for-npm-based-tools).
+The Node.js installer includes npm; verify both before installing the CLI.
 
 | CLI         | Install                                 | Check / launch                        | Official guidance                                                                                                               |
 | ----------- | --------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |

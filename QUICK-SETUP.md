@@ -47,8 +47,42 @@ AGENTS.md and examples. If not, reopen the correct folder and create a new
 terminal. See the [terminal introduction](https://code.visualstudio.com/docs/terminal/getting-started).
 
 Choose **one CLI** from [tool setup](docs/tools.md#cli-setup). If you already have
-one installed, use it. Otherwise, follow its installation steps. Check account
-requirements and costs, and keep normal permission controls enabled.
+one installed, use it. Check account requirements and costs, and keep normal
+permission controls enabled.
+
+### Install Node.js and npm for npm-based tools
+
+If your chosen installation command starts with `npm`, prepare these first:
+
+- **Node.js** is a runtime: software that runs programs written in JavaScript on
+  your computer, outside a web browser. Some AI CLIs need it to run.
+- **npm** is a package manager: a tool that downloads, installs and updates
+  software bundles called **packages**. Here, you use it to install your AI CLI.
+
+You do not need to learn JavaScript to use these tools. The Node.js installer
+includes npm, so you do not need a separate npm download. See
+[npm's installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/).
+
+Check whether they are already available:
+
+```powershell
+node --version
+npm.cmd --version
+```
+
+If either command is missing, download **Node.js LTS** (Long-Term Support) from
+the [official download page](https://nodejs.org/en/download). On Windows, choose
+the installer for your computer and include npm. Close and reopen VS Code after
+installation, open a new terminal and repeat both checks; each should print a
+version number. If you already manage Node through a version manager, use that
+instead of adding a second installation.
+
+An already-working CLI or an installation route that does not use npm can skip
+this step.
+
+### Install and launch the assistant
+
+Follow your chosen CLI's installation instructions in [tool setup](docs/tools.md#cli-setup).
 
 **Before sharing private files:** review your provider's privacy controls and
 the folder access you grant. Cloud assistants send working context to their
