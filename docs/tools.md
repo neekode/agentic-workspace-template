@@ -1,11 +1,12 @@
 # Tools and integrations
 
-## Use what you already have
+## Start with one CLI
 
-An app, editor assistant or CLI can work with this template when it can read the
-workspace files. Select the folder in your chosen client and verify its access
+This starter teaches a terminal workflow. Use an existing AI CLI if you have one,
+or choose one below. Launch it in the workspace folder and verify its file access
 with the [quick setup prompt](../QUICK-SETUP.md#3-verify-workspace-access).
-Add tools and connections when they solve a need in your current task.
+Your editor and provider can vary. Add tools and connections when they solve a
+need in your current task.
 
 ## CLI setup
 

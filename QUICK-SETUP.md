@@ -1,12 +1,13 @@
 # Quick setup
 
-**Start with one assistant reading your workspace, then try one useful task.**
-Use an app, editor assistant or CLI you already have where it supports the needed
-file access. A Windows and VS Code CLI walkthrough is included below.
+**Launch one AI CLI in your workspace, then try one useful task.**
+This walkthrough uses Windows, PowerShell and VS Code to teach the terminal
+workflow. You can use another editor or terminal and your CLI's platform guide.
+You do not need to know programming to begin.
 
 ## 1. Open the workspace
 
-If you already have the folder, open it in your chosen tool. Otherwise, visit the
+If you already have the folder, use it. Otherwise, visit the
 [repository page](https://github.com/neekode/agentic-workspace-template), choose
 **Code > Download ZIP**, and extract it to a folder you want to work in. See
 [GitHub's download guide](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
@@ -14,14 +15,11 @@ If you already have the folder, open it in your chosen tool. Otherwise, visit th
 If you already use Git, cloning is another route. For your own GitHub repository,
 see [Make it yours](docs/workflow.md#make-it-yours).
 
-Open the extracted or cloned folder containing AGENTS.md, this guide and examples.
+Install [VS Code](https://code.visualstudio.com/download) if you need an editor.
+Use **File > Open Folder** to open the extracted or cloned folder containing
+AGENTS.md, this guide and examples.
 
-## 2. Choose your assistant
-
-Use a client that can read the workspace folder and edit files when you approve
-changes. In an app or editor assistant, select that folder using its project or
-folder controls. The [ChatGPT desktop quickstart](https://learn.chatgpt.com/docs/quickstart#setup-app-select-workspace)
-shows one example; follow your chosen tool's instructions.
+## 2. Set up and launch one CLI
 
 ### Apps, CLIs and terminals
 
@@ -31,35 +29,44 @@ shows one example; follow your chosen tool's instructions.
 | **CLI**           | **Command-line interface**: a text-based way to use software in a terminal. AI CLIs can take ordinary chat prompts. |
 | **Terminal**      | A window or editor panel that hosts command-line programs.                                                          |
 
-Both app and CLI clients can provide agents and file access; check the actual
-tools and permissions available in yours.
+PowerShell is the **shell** that interprets the commands you type in the terminal.
+Here, VS Code provides the editor and terminal; the CLI provides the assistant.
+See [why use the command line](README.md#why-use-the-command-line).
+
+Choose **Terminal > New Terminal** in VS Code and select PowerShell from the
+terminal's dropdown. Run these commands one at a time:
+
+```powershell
+Get-Location
+Get-ChildItem -Name
+```
+
+The first shows your current folder; the second lists its contents without
+changing them. Check that the folder is your workspace and the list includes
+AGENTS.md and examples. If not, reopen the correct folder and create a new
+terminal. See the [terminal introduction](https://code.visualstudio.com/docs/terminal/getting-started).
+
+Choose **one CLI** from [tool setup](docs/tools.md#cli-setup). If you already have
+one installed, use it. Otherwise, follow its installation steps. Check account
+requirements and costs, and keep normal permission controls enabled.
 
 **Before sharing private files:** review your provider's privacy controls and
 the folder access you grant. Cloud assistants send working context to their
 provider. See [privacy guidance](docs/tools.md#privacy-before-first-chat).
 
-<details>
-<summary>Windows and VS Code: set up a CLI</summary>
-
-1. Install [VS Code](https://code.visualstudio.com/download) if you need an editor,
-   then use **File > Open Folder** to open the workspace.
-2. Choose **Terminal > New Terminal**, select PowerShell and run `Get-Location`.
-   The location should be your workspace folder. See the
-   [terminal introduction](https://code.visualstudio.com/docs/terminal/getting-started).
-3. Choose one CLI from [tool setup](docs/tools.md#cli-setup), follow its installation
-   and sign-in steps, then reopen the terminal. Check account requirements and
-   costs; keep normal permission controls enabled.
-4. Launch your chosen CLI from the workspace folder. For example, if you installed
-   Codex, run:
+After installation, reopen the terminal and check its folder again. Use the
+version-check and launch commands for your chosen CLI in the tool notes. For
+example, if you chose Codex:
 
 ```powershell
+codex.cmd --version
 codex.cmd
 ```
 
-Use the launch command in the tool notes if you chose another CLI. Paste commands
-into the terminal; paste the prompts below into the assistant.
-
-</details>
+Follow your CLI's sign-in instructions when prompted. Type shell commands at the
+PowerShell prompt; once the assistant is running, type ordinary requests into
+its conversation. Open another terminal when you need to run shell commands
+alongside it.
 
 ## 3. Verify workspace access
 

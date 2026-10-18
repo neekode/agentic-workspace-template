@@ -3,10 +3,11 @@
 ## Next
 
 - [ ] Have a beginner follow [QUICK-SETUP](QUICK-SETUP.md), including privacy
-      review, using a ZIP download or clone and an app or CLI they can access.
-      Verify root and child instruction loading; note the tool version and first
-      step that needs outside help. Separately try the included Windows/VS Code
-      CLI walkthrough. If configuration is edited, verify syntax and client startup.
+      review, using a ZIP download or clone and one CLI in Windows/VS Code.
+      Check that they can distinguish the terminal from the assistant, confirm
+      the working folder and list files themselves. Verify root and child
+      instruction loading; note the CLI version and first step needing help.
+      If configuration is edited, verify syntax and client startup.
 - [ ] Separately try the optional second-agent path with the same tool and with
       a different CLI. Verify shared file access and explicit task boundaries.
 - [ ] Try one example's learner checkpoint: the person explains a decision and

@@ -8,9 +8,9 @@ native loader if needed; do not precreate configuration for unused tools.
 
 ## Research and reuse
 
-Adapt setup and explanations to the user's experience, existing tools and goal.
-Documented editors, providers and integrations are starting options; recommend
-additional setup only for a task that needs it.
+This starter teaches CLI-based workflows. Adapt explanations to the user's
+experience, editor, chosen CLI and goal; help them understand and verify commands.
+Recommend additional tools and integrations only for a task that needs them.
 
 Define the job and required evidence before choosing an implementation. Check
 existing applications, connected tools, repository utilities and prior research;
