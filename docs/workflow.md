@@ -15,9 +15,16 @@ Read the root [agreement](../AGENTS.md) and selected project instructions first.
 | `advance`  | Complete the named, authorized slice, verify it and update its existing work home as useful.       |
 | `trim`     | Propose removal, consolidation or cache relocation; apply only after approval of the reviewed set. |
 
-The other requests in this table are read-only. Normal requests such as
+`context`, `status`, `discover` and `check` are read-only. Normal requests such as
 "update the docs" or "draft a commit message" work without additional vocabulary.
 A task request does not grant unrelated Git, account, publication or device actions.
+
+### Evolve your commands
+
+When a request repeats, refine a command or add one with your assistant. Define
+its outcome, whether it inspects or changes things, and a success check. Keep
+shared meanings here and project variations in their AGENTS.md. Try a small task,
+revise unclear instructions and retire unused commands.
 
 ## Learn by checking
 

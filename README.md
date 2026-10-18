@@ -13,6 +13,14 @@ tool, and verify the result. Build something new only for a demonstrated gap.
 MCPs, external integrations, application features, packages and scripts are central
 to that discovery. See [tools and integrations](docs/tools.md).
 
+## Starter session commands
+
+Start with `context`, `status`, `discover`, `check`, `advance` and `trim`.
+After the assistant reads AGENTS.md, try **`context for the Files example`**.
+These are conversational shortcuts, not terminal commands. The
+[reference](docs/workflow.md#session-requests) defines them and explains how to
+adapt this boilerplate as your workflow grows.
+
 ## Why organize it this way?
 
 **Governance** is your working agreement: how to research, get approval and check
