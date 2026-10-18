@@ -103,6 +103,11 @@ feedback submission. They preserve the model, tools, history and memory settings
 fewer exported diagnostics can make troubleshooting harder.
 See [Codex telemetry and feedback controls](https://learn.chatgpt.com/docs/config-file/config-advanced#observability-and-telemetry).
 
+**For processing to stay on your device:** use a local model and local tools,
+with outbound connections disabled and verified. These Codex settings alone do
+not provide that; cloud requests, local history and connected services remain
+separate privacy considerations.
+
 </details>
 
 ## Shared instructions

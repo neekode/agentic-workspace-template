@@ -1,106 +1,70 @@
 # Quick setup
 
 **Launch one AI CLI in your workspace, then try one useful task.**
-This walkthrough uses Windows, PowerShell and VS Code to teach the terminal
-workflow. You can use another editor or terminal and your CLI's platform guide.
-You do not need to know programming to begin.
+This guide uses Windows, PowerShell and VS Code. Other editors and platforms
+work too. No programming knowledge needed.
 
 ## 1. Open the workspace
 
-If you already have the folder, use it. Otherwise, visit the
-[repository page](https://github.com/neekode/agentic-workspace-template), choose
-**Code > Download ZIP**, and extract it to a folder you want to work in. See
-[GitHub's download guide](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
-
-If you already use Git, cloning is another route. For your own GitHub repository,
-see [Make it yours](docs/workflow.md#make-it-yours).
-
-Install [VS Code](https://code.visualstudio.com/download) if you need an editor.
-Use **File > Open Folder** to open the extracted or cloned folder containing
-AGENTS.md, this guide and examples.
+Download and extract the [repository](https://github.com/neekode/agentic-workspace-template)
+using **Code > Download ZIP**, or clone it if you use Git.
+In [VS Code](https://code.visualstudio.com/download), choose **File > Open Folder**
+and open the folder containing AGENTS.md and examples.
 
 ## 2. Set up and launch one CLI
 
 ### Apps, CLIs and terminals
 
-| Term              | What it means                                                                                                       |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Graphical app** | Software you use through windows, buttons and chat panels.                                                          |
-| **CLI**           | **Command-line interface**: a text-based way to use software in a terminal. AI CLIs can take ordinary chat prompts. |
-| **Terminal**      | A window or editor panel that hosts command-line programs.                                                          |
+A **CLI** (command-line interface) uses text commands instead of an app's buttons.
+A **terminal** hosts it; **PowerShell** interprets your commands. AI CLIs also
+accept ordinary chat prompts. [Why use one?](README.md#why-use-the-command-line)
 
-PowerShell is the **shell** that interprets the commands you type in the terminal.
-Here, VS Code provides the editor and terminal; the CLI provides the assistant.
-See [why use the command line](README.md#why-use-the-command-line).
-
-Choose **Terminal > New Terminal** in VS Code and select PowerShell from the
-terminal's dropdown. Run these commands one at a time:
+Choose **Terminal > New Terminal**, select PowerShell from its dropdown and run:
 
 ```powershell
 Get-Location
 Get-ChildItem -Name
 ```
 
-The first shows your current folder; the second lists its contents without
-changing them. Check that the folder is your workspace and the list includes
-AGENTS.md and examples. If not, reopen the correct folder and create a new
-terminal. See the [terminal introduction](https://code.visualstudio.com/docs/terminal/getting-started).
+These show your folder and its files. Check for AGENTS.md and examples; if missing,
+open the correct folder and a new terminal.
 
-Choose **one CLI** from [tool setup](docs/tools.md#cli-setup). If you already have
-one installed, use it. Check account requirements and costs, and keep normal
-permission controls enabled.
+Choose **one CLI** from [tool setup](docs/tools.md#cli-setup), or use an installed
+one. Check its account requirements and costs.
 
 ### Install Node.js and npm for npm-based tools
 
-If your chosen installation command starts with `npm`, prepare these first:
+**Node.js** runs JavaScript programs; **npm** installs software bundles called
+packages, including some AI CLIs. No JavaScript knowledge needed.
 
-- **Node.js** is a runtime: software that runs programs written in JavaScript on
-  your computer, outside a web browser. Some AI CLIs need it to run.
-- **npm** is a package manager: a tool that downloads, installs and updates
-  software bundles called **packages**. Here, you use it to install your AI CLI.
-
-You do not need to learn JavaScript to use these tools. The Node.js installer
-includes npm, so you do not need a separate npm download. See
-[npm's installation guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm/).
-
-Check whether they are already available:
+If your CLI's install command uses npm, check:
 
 ```powershell
 node --version
 npm.cmd --version
 ```
 
-If either command is missing, download **Node.js LTS** (Long-Term Support) from
-the [official download page](https://nodejs.org/en/download). On Windows, choose
-the installer for your computer and include npm. Close and reopen VS Code after
-installation, open a new terminal and repeat both checks; each should print a
-version number. If you already manage Node through a version manager, use that
-instead of adding a second installation.
-
-An already-working CLI or an installation route that does not use npm can skip
-this step.
+Missing a command? Install [Node.js LTS](https://nodejs.org/en/download)
+(Long-Term Support), which includes npm. Reopen VS Code and repeat the checks;
+both should print version numbers. Keep an existing Node setup if you have one.
+Skip this for an already-working CLI or an installer that does not use npm.
 
 ### Install and launch the assistant
 
-Follow your chosen CLI's installation instructions in [tool setup](docs/tools.md#cli-setup).
-
-**Before sharing private files:** review your provider's privacy controls and
-the folder access you grant. Cloud assistants send working context to their
-provider. See [privacy guidance](docs/tools.md#privacy-before-first-chat).
-
-After installation, reopen the terminal and check its folder again. Use the
-version-check and launch commands for your chosen CLI in the tool notes. For
-example, if you chose Codex:
+Use your CLI's install and launch commands in [tool setup](docs/tools.md#cli-setup).
+Keep normal permission controls enabled. After installation, reopen the terminal
+and check its folder. For Codex, check and launch with:
 
 ```powershell
 codex.cmd --version
 codex.cmd
 ```
 
-Follow your CLI's sign-in instructions when prompted. Type shell commands at the
-PowerShell prompt; once the assistant is running, type ordinary requests into
-its conversation. Open another terminal when you need to run shell commands
-alongside it.
+Sign in when prompted. **Before sharing private files**, review
+[privacy and folder access](docs/tools.md#privacy-before-first-chat): cloud
+assistants send working context to their provider.
+
+Type prompts inside the assistant; use another terminal for shell commands.
 
 ## 3. Verify workspace access
 
@@ -110,11 +74,8 @@ Paste this into the assistant:
 > the three example projects and the next step for one of them. Name the files
 > you actually read. Do not edit files or install anything.
 
-**Success:** the assistant can read the files and describe the workspace.
-Inspect file-reading activity where available. You now have a working agent session.
-
-For automatic instruction loading in later sessions, use the
-[selected-tool guidance](docs/tools.md#shared-instructions).
+Check its file-reading activity where available. For future sessions, configure
+[instruction loading](docs/tools.md#shared-instructions) for your chosen CLI.
 
 ## 4. Choose a project
 
@@ -122,25 +83,11 @@ For automatic instruction loading in later sessions, use the
 - [Magic](examples/magic/README.md): discover deck/catalog integrations before analysis.
 - [Automation](examples/automation/README.md): research cross-ecosystem control.
 
-**Useful first result:** complete one small task, explain one decision and repeat
-one check yourself. Use the [coaching prompt](docs/workflow.md#learn-by-checking)
-and the selected example's learner checkpoint.
-
-Each README includes a starting prompt. Give the agent one named task and review
-its result. See [working together](docs/workflow.md#working-together) when you need
-another agent.
-
-Review file changes in your editor. If you use Git, its history gives you local
-checkpoints; VS Code's **Source Control** view helps review those changes.
-Resume later by asking for `context` on your selected project. Other session
-requests live in the [workflow reference](docs/workflow.md#session-requests).
+Use its starting prompt. Complete one small task, review changes, explain one
+decision and repeat one check yourself. Ask for `context` to resume later;
+see the other [session requests](docs/workflow.md#session-requests).
 
 ## Optional: add another agent
 
-A second session can review a finished result or work on a separate target. It
-can use the same tool. Choose a different CLI when you want to compare tools or
-need a capability your first tool lacks; check the added setup and usage costs.
-
-Repeat the inspection prompt in each new session; conversations do not
-automatically share context. Give simultaneous writers separate targets and keep
-Git operations sequential. See [working together](docs/workflow.md#working-together).
+Use the same CLI or another tool. Repeat the reading prompt, give writers separate
+targets and keep Git operations sequential. See [working together](docs/workflow.md#working-together).

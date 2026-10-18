@@ -15,38 +15,30 @@ to that discovery. See [tools and integrations](docs/tools.md).
 
 ## Why organize it this way?
 
-Governance is your working agreement with an assistant: how to research, what
-needs approval, and how to check results. Shared rules live in [AGENTS.md](AGENTS.md);
-each project keeps its own purpose, constraints and current work.
+**Governance** is your working agreement: how to research, get approval and check
+results. Shared rules live in [AGENTS.md](AGENTS.md); projects add their purpose,
+constraints and current work.
 
-- **Contextualization** gives assistants relevant goals, facts and decisions,
-  reducing repeated explanations between sessions.
-- **Scope drift** is work wandering beyond the agreed goal. A short queue and
-  explicit constraints help keep the next action focused.
-- **Knowledge curation** keeps useful decisions and verified results current.
-  Update existing notes, retire stale instructions, and move recurring lessons
-  into shared guidance when other projects can benefit.
+- **Contextualization:** relevant goals and decisions reduce repeated explanations.
+- **Scope drift:** a short queue and clear limits keep work on the agreed goal.
+- **Knowledge curation:** update useful notes, retire stale ones and promote
+  recurring lessons into shared guidance.
 
-These habits create a feedback loop: try, check, learn and refine the guidance.
-Git can track its evolution when you use it. The
-[coaching prompt](docs/workflow.md#learn-by-checking) helps you understand a choice
-and verify the result yourself.
+The guidance evolves as you try, check and learn. Maintain results in place instead
+of accumulating session reports. Use the [coaching prompt](docs/workflow.md#learn-by-checking)
+to understand a choice and verify it yourself.
 
 ### Why use the command line?
 
-Web and desktop apps are one way to work with AI. A **CLI**, or command-line
-interface, runs in a terminal and can still accept ordinary chat prompts.
-Learning this route lets you choose your editor and terminal layout, work in
-project folders, and combine assistants with local commands, existing tools and
-MCP integrations. As needs grow, CLIs with scripting support can become part of
-repeatable workflows; see [Codex's examples](https://learn.chatgpt.com/docs/codex/cli).
+A **CLI** (command-line interface) runs in a terminal and accepts chat prompts.
+It lets you shape your editor and terminal layout, work in project folders and
+combine assistants with local tools, MCPs and, where supported, scripts.
+See [Codex's examples](https://learn.chatgpt.com/docs/codex/cli).
 
-The aim is more control over your working environment and how tools fit together.
-Graphical assistants can offer file access and integrations too; capabilities
-depend on the tool and permissions. Here, your working agreement and project
-knowledge stay in files you can inspect, edit and reuse across compatible tools.
-Each assistant still needs to read them; chat history and app settings may stay
-separate.
+Apps can offer tools too; this workflow teaches direct control of your working
+environment. Rules and project knowledge stay in readable files you can reuse
+across compatible assistants. Each assistant must read them; chat histories stay
+with their tools.
 
 ## Examples
 
@@ -61,5 +53,10 @@ Pick an example and start with its prompt.
 [Workflow reference](docs/workflow.md) covers session requests, coordination and
 adding your projects.
 For a combined view in VS Code, open [workspace.code-workspace](workspace.code-workspace).
+
+> **Privacy & analytics:** AI tools may collect usage data; cloud models receive
+> prompts and selected context. See [privacy controls](docs/tools.md#privacy-before-first-chat)
+> for training opt-outs and Codex's `config.toml` settings to disable optional
+> analytics and diagnostic exports. Cloud processing still sends data off-device.
 
 v0 · [MIT license](LICENSE) · [Template maintenance](now.md)
