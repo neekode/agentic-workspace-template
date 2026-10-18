@@ -1,11 +1,21 @@
 # Tools and integrations
 
+## Use what you already have
+
+An app, editor assistant or CLI can work with this template when it can read the
+workspace files. Select the folder in your chosen client and verify its access
+with the [quick setup prompt](../QUICK-SETUP.md#3-verify-workspace-access).
+Add tools and connections when they solve a need in your current task.
+
 ## CLI setup
 
-Use two tools you can access; check each provider's current account requirements
-and costs. These are Windows PowerShell installation routes, not an installer
-that the template runs. Official links also cover other platforms. Setup docs
-were checked October 18, 2026; live walkthrough acceptance is still pending.
+For the difference between a CLI, an app and a terminal, see the
+[quick setup explanation](../QUICK-SETUP.md#apps-clis-and-terminals).
+
+Start with one tool you can access; check its current account requirements and
+costs. Add another only for a useful review, comparison or missing capability.
+These are Windows PowerShell installation routes. The official guides cover
+account requirements and other platforms.
 
 For npm routes, install [Node.js LTS](https://nodejs.org/en/download) if needed and
 reopen your terminal. Check `node --version` and `npm.cmd --version` first.
@@ -19,16 +29,40 @@ reopen your terminal. Check `node --version` and `npm.cmd --version` first.
 If WinGet is unavailable, use Claude's official native installer. Standalone
 Codex installation is also documented upstream. Use the provider's troubleshooting
 for failed downloads or sign-in; do not disable machine-wide protections or delete
-dependencies blindly. The workspace itself has no runtime dependency.
+dependencies blindly. For a blocked npm-installed PowerShell launcher, use its
+`.cmd` form. If a command is missing, reopen the terminal and check installation.
 
 ## Privacy before first chat
 
-Review privacy settings after signing in and before sharing private project data.
-Each CLI and account has separate controls. Codex's default **user-level** file is
-`%USERPROFILE%\.codex\config.toml` on Windows or `~/.codex/config.toml` elsewhere.
-It affects other Codex workspaces too and stays outside this template.
+Review the selected client's permissions and account controls before sharing
+private project data. Cloud model requests transmit working context. Turning off
+analytics or training does not eliminate service-side retention or connected-service
+logging; see [API retention](https://developers.openai.com/api/docs/guides/your-data).
+For another selected provider, review its [Claude data-usage guidance](https://code.claude.com/docs/en/data-usage)
+or [Gemini terms and privacy](https://geminicli.com/docs/resources/tos-privacy/).
 
-### Edit the relevant settings carefully
+### Account controls
+
+- **Personal ChatGPT sign-in:** turn off **Settings > Data controls > Improve the
+  model for everyone**. This covers new ChatGPT conversations and Codex tasks.
+  Check Codex's separate **Include environments** setting and turn it off if
+  available; if it is absent, report it as unverified. Response feedback such as
+  thumbs up/down can allow the associated conversation to be used for training
+  despite the opt-out. See [ChatGPT data controls](https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt).
+- **API key:** review the key's organization and project
+  [data-sharing settings](https://platform.openai.com/settings/organization/data-controls/sharing).
+  Keep feedback, evaluation/fine-tuning data sharing, and input/output sharing
+  disabled. API data is not used for model training by default, unless sharing is
+  enabled. Other agent applications or SDKs have their own tracing controls.
+
+### Optional: Codex analytics and diagnostic exports
+
+<details>
+<summary>Configure these settings if you choose to use Codex</summary>
+
+Codex's default **user-level** file is `%USERPROFILE%\.codex\config.toml` on
+Windows or `~/.codex/config.toml` elsewhere. It affects other Codex workspaces
+too. These edits configure Codex; review other selected clients separately.
 
 1. Check `codex.cmd --version` and the current
    [configuration reference](https://learn.chatgpt.com/docs/config-file/config-reference).
@@ -67,41 +101,26 @@ feedback submission. They preserve the model, tools, history and memory settings
 fewer exported diagnostics can make troubleshooting harder.
 See [Codex telemetry and feedback controls](https://learn.chatgpt.com/docs/config-file/config-advanced#observability-and-telemetry).
 
-Account controls need a separate check:
-
-- **Personal ChatGPT sign-in:** turn off **Settings > Data controls > Improve the
-  model for everyone**. This covers new ChatGPT conversations and Codex tasks.
-  Check Codex's separate **Include environments** setting and turn it off if
-  available; if it is absent, report it as unverified. Response feedback such as
-  thumbs up/down can allow the associated conversation to be used for training
-  despite the opt-out. See [ChatGPT data controls](https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt).
-- **API key:** review the key's organization and project
-  [data-sharing settings](https://platform.openai.com/settings/organization/data-controls/sharing).
-  Keep feedback, evaluation/fine-tuning data sharing, and input/output sharing
-  disabled. API data is not used for model training by default, unless sharing is
-  enabled. Other agent applications or SDKs have their own tracing controls.
-
-Cloud model requests still transmit working context. Turning off analytics or
-training does not eliminate service-side retention or connected-service logging;
-review [API retention](https://developers.openai.com/api/docs/guides/your-data)
-and each tool's data destinations separately. This template does not apply
-account settings or configure other providers automatically. For another selected
-CLI, review its own [Claude data-usage guidance](https://code.claude.com/docs/en/data-usage)
-or [Gemini terms and privacy](https://geminicli.com/docs/resources/tos-privacy/)
-for the account you use; the Codex settings above do not configure those tools.
+</details>
 
 ## Shared instructions
 
-AGENTS.md is the only instruction file supplied by default. Start each CLI with
+AGENTS.md is the only instruction file supplied by default. Start each agent with
 an explicit request to read it, as shown in [quick setup](../QUICK-SETUP.md).
 An agent cannot infer shared rules it has not loaded.
 
-For later automatic loading, have the chosen agent verify its CLI's supported
+For later automatic loading, have the chosen agent verify its client's supported
 mechanism and create only the needed project-local loader or configuration.
 Claude and Gemini can use small imports; other tools may load AGENTS.md directly.
 Keep one policy owner and verify actual file reads. Do not create files for tools
 the user has not chosen. Launching inside a child also requires access to the
 shared root guidance; a Markdown link is a reading request, not an automatic import.
+
+You can ask:
+
+> Check this tool's project-instruction mechanism. If it needs an extra startup
+> file to load AGENTS.md, create only that minimal project-local pointer. Keep the
+> rules in AGENTS.md and report how I can verify it loaded.
 
 Official behavior: [Codex](https://developers.openai.com/codex/guides/agents-md/),
 [Claude](https://code.claude.com/docs/en/memory),

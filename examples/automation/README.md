@@ -14,8 +14,9 @@ and compatibility research; keep custom controller development a last resort.
 | Daily routine     | User to describe          | Coordinate selected devices           | Unknown              |
 
 Ask what must work locally, which devices already exist and what compromises are
-acceptable. A shared dashboard, an automation engine and a device protocol solve
-different jobs; choose based on the needed operations.
+acceptable. Check whether current apps or integrations already cover the desired
+routine before proposing a new controller. A shared dashboard, an automation
+engine and a device protocol solve different jobs; choose based on the needed operations.
 
 ## Research existing software
 
@@ -26,14 +27,13 @@ describes direct local communication where devices support it; some integrations
 still depend on vendor services. Do not promise that every device can escape its
 cloud ecosystem.
 
-A deployed controller needs a running host; see [installation options](https://www.home-assistant.io/installation/).
-Research and workspace planning remain useful without one. Account connections,
-hosting and physical-control acceptance belong to a later implementation scope.
+If a proposed trial needs a new host or account connection, include that setup
+in the proposal; see [installation options](https://www.home-assistant.io/installation/).
 
 ## Next
 
-- [ ] Inventory two device models and one desired routine. Compare existing
-      software/integrations, then propose the smallest useful trial with its gaps
+- [ ] Identify the device models and routine the user wants to work on. Compare
+      existing software/integrations, then propose the smallest useful trial with its gaps
       and host requirements. Write custom code only for a demonstrated missing capability.
 
 ## Use the session commands
@@ -54,7 +54,8 @@ Use these inside the agent; shared meanings live in the
 
 > Read this project's AGENTS.md and README. Help me research how to coordinate
 > my devices across vendor apps. Ask for exact models and the routine I want,
-> then compare existing local-control options using current official evidence.
+> then compare existing options against my needs using current official evidence,
+> including local control and any cloud dependencies.
 > Propose a small trial; do not install software, connect accounts or control devices.
 
 **Useful result:** a compatibility-backed recommendation with a bounded next step.

@@ -15,7 +15,8 @@ contains placeholders rather than a real person's filenames or library.
 
 Ask for the chosen folder, the user's preferred way to find things and what
 already works. Research existing file-manager or library features before custom
-scripts. Filenames and matching sizes alone do not prove duplicate content.
+scripts. Better tags or a catalog view may solve the need without moving files.
+Filenames and matching sizes alone do not prove duplicate content.
 
 ## Next
 

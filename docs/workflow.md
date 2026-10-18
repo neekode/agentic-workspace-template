@@ -36,21 +36,31 @@ in its existing home when recording is requested.
 
 ## Working together
 
-Give each writer a named target and outcome. Start with one agent doing a task
-and another reviewing the completed result. For parallel work, assign separate
-projects or nonoverlapping files; one owner reviews shared changes afterwards.
+An **agent** is an assistant session with access to tools; a **model** is the
+engine behind its responses. Multiple agents can use the same app or CLI.
+Multi-CLI means using different command-line programs.
+
+Give each writer a named target and outcome. Start with one agent and review its
+result. Optionally use a second session of the same tool, or another tool, to review
+completed work. For parallel work, assign separate projects or nonoverlapping
+files; one owner reviews shared changes afterwards.
 Do not let agents mutate the same Git index or overlapping files concurrently.
 Use sequential work or [Git worktrees](https://git-scm.com/docs/git-worktree)
 for overlapping development, after choosing a committed starting point and branches.
 
-A lead agent may delegate bounded work if your chosen CLI supports it. Separate
-CLIs need explicit assignments; they do not automatically exchange conversations.
+A lead agent may delegate bounded work if your chosen tool supports it. Give
+separate clients explicit assignments and the context each needs.
 Use the project README or existing queue for durable progress and the next step.
 Update that home when useful; do not create a report for every session. A newcomer
 resumes by reading shared rules, local guidance and current work, then checking
 fresh state rather than trusting a previous agent's claims.
 
 ## Add your projects
+
+Add a folder for your own project with a short README naming its goal, current
+work and next step. Its AGENTS.md links to the shared agreement and adds any
+project-specific constraints. Keep an existing task list or product plan when
+it already serves that purpose.
 
 Bundled examples are ordinary tracked folders. Independent Git checkouts can live
 under ignored `repos/<project>` and keep their own history, configuration and tasks.
@@ -59,7 +69,7 @@ Folder to Workspace** in VS Code if you want a combined view. Other editors work
 
 For a child at `repos/my-project`, its AGENTS.md should link to `../../AGENTS.md`,
 name its purpose and current work home, and list domain constraints and real checks.
-Configure automatic loading only for the chosen CLI, as described in
+Configure automatic loading only for the chosen tool, as described in
 [tool setup](tools.md#shared-instructions). Verify loading and update the shared
 path if a checkout or worktree moves. Use an existing task home,
 with Next / Backlog / Waiting where helpful and empty sections omitted.
@@ -71,13 +81,12 @@ Ignore rules do not remove files already staged or tracked.
 
 ## Make it yours
 
-Rename the workspace and replace the examples. Keep original inputs and deliberate
-assets with their owners; use ignored `cache/` for reproducible material when useful.
-Cache is neither a backup nor deletion authority. A local workspace stays useful
-without a dashboard, orchestrator or always-on service.
+Use the examples that help and adapt the structure as your projects grow.
+Keep original inputs and deliberate assets with their owners; use ignored
+`cache/` for reproducible material when useful.
+Cache is neither a backup nor deletion authority.
 
 [GitHub templates](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
-create independent repositories; later updates require review. Record the source
-release if you need an update path. Consider existing tools such as
-[Copier](https://copier.readthedocs.io/en/stable/updating/) only when repeated managed
-updates justify them. Build no bootstrap framework for a hypothetical need.
+create independent repositories; later updates require review. If you want your
+own GitHub repository, use **Use this template**, then clone that repository.
+Record the source release if you need to review future template updates.

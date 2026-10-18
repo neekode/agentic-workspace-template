@@ -3,9 +3,12 @@
 ## Next
 
 - [ ] Have a beginner follow [QUICK-SETUP](QUICK-SETUP.md), including privacy
-      setup, with two different CLIs. Verify root and child instruction loading;
-      note tool versions and the first step that needs outside help. If configuration
-      is edited, check both its syntax and successful client startup.
+      review, using a ZIP download or clone and an app or CLI they can access.
+      Verify root and child instruction loading; note the tool version and first
+      step that needs outside help. Separately try the included Windows/VS Code
+      CLI walkthrough. If configuration is edited, verify syntax and client startup.
+- [ ] Separately try the optional second-agent path with the same tool and with
+      a different CLI. Verify shared file access and explicit task boundaries.
 - [ ] Try one example's learner checkpoint: the person explains a decision and
       repeats a relevant check. Record the observed result rather than inferring
       learning from an assistant's finished document.
@@ -14,8 +17,13 @@
       tool names, source/retrieval time and one checked result in the
       [Magic example](examples/magic/README.md). Keep this open if access is blocked;
       a configured server or proposed tool is not live proof.
+- [ ] Try the Magic example with a supplied export and existing catalog tools,
+      identifying what can be reviewed immediately and what needs more data or setup.
 - [ ] Verify any selected automation trial on the actual devices. Other-platform
       setup walkthroughs also remain unverified.
 
 Keep short observations beside these items when tried, including any error and
 next action. Use the existing homes; no separate acceptance report is required.
+
+Setup references were reviewed October 18, 2026. The walkthroughs, live
+integrations and device checks above remain unverified.

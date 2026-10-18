@@ -8,6 +8,10 @@ native loader if needed; do not precreate configuration for unused tools.
 
 ## Research and reuse
 
+Adapt setup and explanations to the user's experience, existing tools and goal.
+Documented editors, providers and integrations are starting options; recommend
+additional setup only for a task that needs it.
+
 Define the job and required evidence before choosing an implementation. Check
 existing applications, connected tools, repository utilities and prior research;
 consult current official docs, packages, plugins, scripts, APIs and MCPs as needed.
@@ -25,7 +29,7 @@ approval; ask only when a consequential choice or scope gap blocks progress.
 
 Assign each active writer a named target. Avoid overlapping edits and concurrent
 Git operations in one checkout. Use sequential review or isolated worktrees when
-needed. Separate CLI conversations do not automatically share state. See the
+needed. Do not assume separate sessions share context. See the
 [workflow reference](docs/workflow.md) for coordination and session requests.
 
 ## Keep the workspace lean

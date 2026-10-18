@@ -1,88 +1,79 @@
 # Quick setup
 
-**First milestone: two different AI CLIs reading the same workspace.** Then use
-Files, Magic or Automation to try useful work. This ramp uses Windows and
-VS Code; the files work with other editors. Other-platform walkthroughs remain
-unverified. Cloud tools need internet, account access and possibly paid usage.
-
-A terminal is a panel for launching programs. A CLI is a program you launch there.
-An agent is an assistant session with access to permitted tools. A model is the
-engine behind its responses; switching models inside one CLI does not create a
-second CLI. Paste command blocks into the terminal and press Enter; paste quoted
-prompts inside the agent.
+**Start with one assistant reading your workspace, then try one useful task.**
+Use an app, editor assistant or CLI you already have where it supports the needed
+file access. A Windows and VS Code CLI walkthrough is included below.
 
 ## 1. Open the workspace
 
-Install [Git](https://git-scm.com/downloads) and
-[VS Code](https://code.visualstudio.com/download), then reopen VS Code.
-If you already have this folder, use **File > Open Folder**. Otherwise copy the
-repository's HTTPS URL, press **Ctrl+Shift+P**, choose **Git: Clone**, paste the URL
-and open the resulting folder. Use GitHub's **Use this template** first, when
-available, if you want your own repository; clone that new repository's URL.
-Cloning the public source directly is fine for practice. Review the source before
-trusting it.
+If you already have the folder, open it in your chosen tool. Otherwise, visit the
+[repository page](https://github.com/neekode/agentic-workspace-template), choose
+**Code > Download ZIP**, and extract it to a folder you want to work in. See
+[GitHub's download guide](https://docs.github.com/en/repositories/working-with-files/using-files/downloading-source-code-archives).
 
-Choose **Terminal > New Terminal**, select PowerShell and run:
+If you already use Git, cloning is another route. For your own GitHub repository,
+see [Make it yours](docs/workflow.md#make-it-yours).
 
-```powershell
-git --version
-Get-Location
-```
+Open the extracted or cloned folder containing AGENTS.md, this guide and examples.
 
-A version should appear, and the location should be your workspace folder.
-Its file list should contain AGENTS.md, this guide and examples.
+## 2. Choose your assistant
 
-## 2. Install two CLIs
+Use a client that can read the workspace folder and edit files when you approve
+changes. In an app or editor assistant, select that folder using its project or
+folder controls. The [ChatGPT desktop quickstart](https://learn.chatgpt.com/docs/quickstart#setup-app-select-workspace)
+shows one example; follow your chosen tool's instructions.
 
-Choose two tools you can access from [tool setup](docs/tools.md#cli-setup).
-Codex and Claude Code are a concrete pairing; Gemini is another option. Follow
-the selected installation steps and browser sign-ins, then reopen the terminal.
-Leave the normal permission controls enabled.
+### Apps, CLIs and terminals
 
-> [!IMPORTANT]
-> **Review privacy before your first chat.** Cloud assistants send working context
-> to their provider even when commands run locally. For Codex, follow
-> [privacy setup](docs/tools.md#privacy-before-first-chat) to disable optional
-> analytics, telemetry export and feedback submission, then check the separate
-> account training controls. These settings preserve the agent's working context
-> and tools; they do not guarantee zero retention. Review each chosen provider
-> separately.
+| Term              | What it means                                                                                                       |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Graphical app** | Software you use through windows, buttons and chat panels.                                                          |
+| **CLI**           | **Command-line interface**: a text-based way to use software in a terminal. AI CLIs can take ordinary chat prompts. |
+| **Terminal**      | A window or editor panel that hosts command-line programs.                                                          |
 
-Create two terminals with the **+** button and rename them after the tools.
-Both should start in the workspace root. Launch one CLI in each. For the pairing
-above, use this in the Codex terminal:
+Both app and CLI clients can provide agents and file access; check the actual
+tools and permissions available in yours.
+
+**Before sharing private files:** review your provider's privacy controls and
+the folder access you grant. Cloud assistants send working context to their
+provider. See [privacy guidance](docs/tools.md#privacy-before-first-chat).
+
+<details>
+<summary>Windows and VS Code: set up a CLI</summary>
+
+1. Install [VS Code](https://code.visualstudio.com/download) if you need an editor,
+   then use **File > Open Folder** to open the workspace.
+2. Choose **Terminal > New Terminal**, select PowerShell and run `Get-Location`.
+   The location should be your workspace folder. See the
+   [terminal introduction](https://code.visualstudio.com/docs/terminal/getting-started).
+3. Choose one CLI from [tool setup](docs/tools.md#cli-setup), follow its installation
+   and sign-in steps, then reopen the terminal. Check account requirements and
+   costs; keep normal permission controls enabled.
+4. Launch your chosen CLI from the workspace folder. For example, if you installed
+   Codex, run:
 
 ```powershell
 codex.cmd
 ```
 
-And this in the Claude terminal:
+Use the launch command in the tool notes if you chose another CLI. Paste commands
+into the terminal; paste the prompts below into the assistant.
 
-```powershell
-claude
-```
+</details>
 
-If you chose another tool, use its launch command from the tool notes.
+## 3. Verify workspace access
 
-## 3. Verify shared context
-
-Paste this into each assistant separately:
+Paste this into the assistant:
 
 > Read AGENTS.md and examples/README.md. Inspect only. Describe this workspace,
 > the three example projects and the next step for one of them. Name the files
 > you actually read. Do not edit files or install anything.
 
-**Success:** both CLIs can read the files and describe the same workspace.
-Inspect file-reading activity where available. Their conversations remain separate;
-shared files carry the project context. You now have a multi-CLI setup.
+**Success:** the assistant can read the files and describe the workspace.
+Inspect file-reading activity where available. You now have a working agent session.
 
-For automatic instruction loading in later sessions, ask the selected agent:
-
-> Check your CLI's current project-instruction mechanism. If it needs an extra
-> startup file to load AGENTS.md, create only that minimal project-local pointer.
-> Keep the rules in AGENTS.md and report how I can verify it loaded.
-
-The starter deliberately includes no loader files for unused CLIs.
+For automatic instruction loading in later sessions, use the
+[selected-tool guidance](docs/tools.md#shared-instructions).
 
 ## 4. Choose a project
 
@@ -90,19 +81,25 @@ The starter deliberately includes no loader files for unused CLIs.
 - [Magic](examples/magic/README.md): discover deck/catalog integrations before analysis.
 - [Automation](examples/automation/README.md): research cross-ecosystem control.
 
-**Second milestone:** complete one bounded task, explain one decision and repeat
+**Useful first result:** complete one small task, explain one decision and repeat
 one check yourself. Use the [coaching prompt](docs/workflow.md#learn-by-checking)
 and the selected example's learner checkpoint.
 
-Each README includes a starting prompt. Give one agent a named task, then have
-the other review its finished result without editing. For simultaneous work, use
-separate targets. Built-in delegation is optional; see [working together](docs/workflow.md#working-together).
+Each README includes a starting prompt. Give the agent one named task and review
+its result. See [working together](docs/workflow.md#working-together) when you need
+another agent.
 
-Review file changes in VS Code's **Source Control** view before accepting them.
-A local Git commit records a checkpoint; pushing or publishing is a separate
-choice. Resume later by asking for `context` on your selected project.
+Review file changes in your editor. If you use Git, its history gives you local
+checkpoints; VS Code's **Source Control** view helps review those changes.
+Resume later by asking for `context` on your selected project. Other session
+requests live in the [workflow reference](docs/workflow.md#session-requests).
 
-If a command is missing, reopen the terminal and check its installation. For a
-blocked npm-installed PowerShell launcher, use its `.cmd` form. If files are
-missing, check the working folder and tool access. Other setup and instruction
-loading details live in [tool notes](docs/tools.md).
+## Optional: add another agent
+
+A second session can review a finished result or work on a separate target. It
+can use the same tool. Choose a different CLI when you want to compare tools or
+need a capability your first tool lacks; check the added setup and usage costs.
+
+Repeat the inspection prompt in each new session; conversations do not
+automatically share context. Give simultaneous writers separate targets and keep
+Git operations sequential. See [working together](docs/workflow.md#working-together).
